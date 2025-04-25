@@ -178,9 +178,6 @@ We welcome contributions! Please:
 - Include OpenSSL debug output
 - Specify TLS library/version
 
-## 📜 License
-
-MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
