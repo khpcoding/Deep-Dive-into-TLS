@@ -79,45 +79,8 @@ The TLS handshake is the process of negotiating security parameters and establis
 
 ### 🔁 TLS 1.2 Handshake Steps
 
-sequenceDiagram
-    participant Client
-    participant Server
 
-    Note over Client,Server: TCP 3-Way Handshake (SYN, SYN-ACK, ACK)
-    
-    %% Phase 1: Negotiation
-    Client->>Server: ClientHello
-    Note left of Client: - TLS Version<br>- Cipher Suites<br>- Client Random<br>- Extensions (SNI, ALPN)
-    
-    Server->>Client: ServerHello
-    Note right of Server: - Selected TLS 1.2<br>- Cipher Suite<br>- Server Random
-    
-    %% Phase 2: Server Authentication
-    Server->>Client: Certificate
-    Note right of Server: Sends cert chain<br>(Leaf → Intermediate → Root CA)
-    
-    alt Diffie-Hellman Key Exchange
-        Server->>Client: ServerKeyExchange
-        Note right of Server: DH/ECDH Parameters<br>(Public Key)
-    end
-    
-    Server->>Client: ServerHelloDone
-    
-    %% Phase 3: Key Exchange
-    Client->>Server: ClientKeyExchange
-    Note left of Client: - PreMasterSecret<br>(Encrypted with Server's Public Key)
-    
-    %% Phase 4: Finalization
-    Client->>Server: ChangeCipherSpec
-    Note left of Client: Switch to Encrypted Communication
-    
-    Client->>Server: Finished
-    Note left of Client: First encrypted message<br>(Verify handshake integrity)
-    
-    Server->>Client: ChangeCipherSpec
-    Server->>Client: Finished
-    
-    Note over Client,Server: Application Data (Encrypted with AES/GCM)
+![deepseek_mermaid_20250425_55238f](https://github.com/user-attachments/assets/7e1b4be6-a128-44aa-8044-75e917690168)
 
 
 
