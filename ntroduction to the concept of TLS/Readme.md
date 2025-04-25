@@ -1,7 +1,6 @@
 
 ---
 
-markdown
 ## 🔐 Deep Dive into TLS and Its Versions
 
 > A complete and technical exploration of **Transport Layer Security (TLS)**, including version history, the TLS handshake, packet analysis with Wireshark, Root CAs, encryption principles, and modern best practices.
